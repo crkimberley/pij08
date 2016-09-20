@@ -1,7 +1,7 @@
 /**
  * @author crkimberley on 20/09/2016.
  */
-public class AdultPerson implements Person {
+public class AdultHuman implements Human {
 
     private int situation;
     private int energy;

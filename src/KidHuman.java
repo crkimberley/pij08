@@ -1,7 +1,7 @@
 /**
  * @author crkimberley on 20/09/2016.
  */
-public class KidPerson implements Person {
+public class KidHuman implements Human {
 
     private int position;
     private Brain brain = new Brain();

@@ -6,7 +6,7 @@
  * and by speech (as opposed to animals).
  */
 
-public interface Person {
+public interface Human {
 
     /**
      * Move a distance in a straight line, given in meters.
