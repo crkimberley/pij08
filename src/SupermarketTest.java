@@ -9,38 +9,41 @@ public class SupermarketTest {
     }
 
     private void launch() {
-        shop = new Supermarket();
+        for (int i=1; i<=3; i++) {
+            shop = new Supermarket(i);
+            System.out.println("PersonQueueImpl - type " + i);
 
-        Person a = new Person("Alf");
-        Person b = new Person("Bertha");
-        Person c = new Person("Cynthia");
-        Person d = new Person("Derek");
-        Person e = new Person("Enid");
-        Person f = new Person("Fred");
-        Person g = new Person("Godfrey");
+            Person a = new Person("Alf");
+            Person b = new Person("Bertha");
+            Person c = new Person("Cynthia");
+            Person d = new Person("Derek");
+            Person e = new Person("Enid");
+            Person f = new Person("Fred");
+            Person g = new Person("Godfrey");
 
-        System.out.println(shop);
-        joinQueue(a);
-        System.out.println(shop);
-        joinQueue(b);
-        joinQueue(c);
-        joinQueue(d);
-        System.out.println(shop);
-        serve();
-        serve();
-        joinQueue(e);
-        joinQueue(f);
-        System.out.println(shop);
-        serve();
-        serve();
-        serve();
-        System.out.println(shop);
-        serve();
-        serve();
-        System.out.println(shop);
-        joinQueue(g);
-        serve();
-        System.out.println(shop);
+            System.out.println(shop);
+            joinQueue(a);
+            System.out.println(shop);
+            joinQueue(b);
+            joinQueue(c);
+            joinQueue(d);
+            System.out.println(shop);
+            serve();
+            serve();
+            joinQueue(e);
+            joinQueue(f);
+            System.out.println(shop);
+            serve();
+            serve();
+            serve();
+            System.out.println(shop);
+            serve();
+            serve();
+            System.out.println(shop);
+            joinQueue(g);
+            serve();
+            System.out.println(shop);
+        }
     }
 
     private void joinQueue(Person person) {

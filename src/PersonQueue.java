@@ -15,4 +15,10 @@ public interface PersonQueue {
 
     Person retrieve();
 
+    /**
+     * Gets size of queue
+     */
+
+    int getSize();
+
 }
