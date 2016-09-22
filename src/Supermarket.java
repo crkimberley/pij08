@@ -12,6 +12,10 @@ public class Supermarket {
                 break;
             case 3: queue = new PersonQueueArrayImpl();
                 break;
+            case 4: queue = new PersonQueueUnfairImpl();
+                break;
+            case 5: queue = new PersonQueueClusteredImpl();
+                break;
         }
     }
 

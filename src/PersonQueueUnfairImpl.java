@@ -2,11 +2,11 @@
  * @author crkimberley on 20/09/2016.
  */
 // Singly-linked circular list used for the queue
-public class PersonQueueImpl implements PersonQueue {
+public class PersonQueueUnfairImpl implements PersonQueue {
     private Node rear;
     private int size;
 
-    public PersonQueueImpl() {
+    public PersonQueueUnfairImpl() {
         rear = null;
         size = 0;
     }
@@ -21,7 +21,17 @@ public class PersonQueueImpl implements PersonQueue {
             newNode.link = rear.link;
         }
         rear.link = newNode;
-        rear = newNode;
+        /**
+         * Unfair implementation means oldest person is served first.
+         * If new person is older than person at the front of the queue,
+         * new person joins at the front, rather than the rear.
+         *
+         * With a circular list, RightInsert/LeftDelete provides queue functiionality
+         * But without the statement: rear = newNode - we get a LeftInsert instead
+         */
+        if (newNode.person.getAge() < newNode.link.person.getAge()) {
+            rear = newNode;
+        }
     }
 
     @Override
@@ -75,7 +85,7 @@ public class PersonQueueImpl implements PersonQueue {
         }
 
         public String toString() {
-            return person.getName();
+            return person.getName() + ", " + person.getAge();
         }
     }
 }
