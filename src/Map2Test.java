@@ -39,10 +39,23 @@ public class Map2Test {
         System.out.println("Try to remove non-existent James from key 22");
         map.remove(22, "James");
 
+        System.out.println("Add another name to key 11 - Tony");
+        map.put(11, "Tony");
+
         System.out.println("remove Bert");
         map.remove(22, "Bert");
         System.out.println("remove Carol");
         map.remove(33, "Carol");
+
+        System.out.println("Empty?  -  " + map.isEmpty());
+
+        System.out.println("Get key 11 values");
+        System.out.println(Arrays.toString(map.get(11)));
+
+        System.out.println("remove Tony");
+        map.remove(11, "Tony");
+        System.out.println("Get key 11 values");
+        System.out.println(Arrays.toString(map.get(11)));
 
         System.out.println("Empty?  -  " + map.isEmpty());
     }
