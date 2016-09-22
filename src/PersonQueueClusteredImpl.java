@@ -18,11 +18,13 @@ public class PersonQueueClusteredImpl implements PersonQueue {
         if (front == null) {
             front = newNode;
         } else {
+            // Old people go to the rear of their age band, which is at the front of the queue
             if (newNode.ageBand() > front.ageBand()) {
                 newNode.link = front;
                 front = newNode;
             } else {
                 Node temp = front;
+                // Other people queue at the rear of their age bands
                 while (temp.link != null && newNode.ageBand() <= temp.link.ageBand()) {
                     temp = temp.link;
                 }
